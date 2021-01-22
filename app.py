@@ -22,7 +22,7 @@ app.secret_key = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<!\xd5\xa2\xa0\x9fR"\xa1
     #MAIL_USERNAME = params['gmail-user'],
     #MAIL_PASSWORD=  params['gmail-password'])
 mail = Mail(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b1b6db96efaedc:8579f884@us-cdbr-east-03.cleardb.com/heroku_3bd3851c6c8e48?assl=true'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b1b6db96efaedc:8579f884@us-cdbr-east-03.cleardb.com/heroku_3bd3851c6c8e48a?ssl=true'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

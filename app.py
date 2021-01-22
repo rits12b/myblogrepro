@@ -13,7 +13,7 @@ with open('config.json', 'r') as c:
 
 local_server = True
 app = Flask(__name__)
-app.secret_key = 'super-secret-key'
+app.secret_key = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<!\xd5\xa2\xa0\x9fR"\xa1\xa8'
 app.config['UPLOAD_FOLDER'] = params['upload_location']
 app.config.update(
     MAIL_SERVER = 'smtp.gmail.com',

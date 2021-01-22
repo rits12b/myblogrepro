@@ -14,18 +14,16 @@ with open('config.json', 'r') as c:
 local_server = True
 app = Flask(__name__)
 app.secret_key = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<!\xd5\xa2\xa0\x9fR"\xa1\xa8'
-app.config['UPLOAD_FOLDER'] = params['upload_location']
-app.config.update(
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = '587',
-    MAIL_USE_SSL = True,
-    MAIL_USERNAME = params['gmail-user'],
-    MAIL_PASSWORD=  params['gmail-password']
+#app.config['UPLOAD_FOLDER'] = params['upload_location']
+#app.config.update(
+    #MAIL_SERVER = 'smtp.gmail.com',
+   # MAIL_PORT = '587',
+    #MAIL_USE_SSL = True,
+    #MAIL_USERNAME = params['gmail-user'],
+    #MAIL_PASSWORD=  params['gmail-password']
 )
 mail = Mail(app)
-if(local_server):
-    app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b1b6db96efaedc:8579f884@us-cdbr-east-03.cleardb.com/heroku_3bd3851c6c8e48a'
 db = SQLAlchemy(app)
 
 

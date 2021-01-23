@@ -46,7 +46,7 @@ class Posts(db.Model):
     img_file = db.Column(db.String(12), nullable=True)
 
 
-@app.route("/")
+@app.route("/",methods=['GET', 'POST'])
 def home():
     posts = Posts.query.filter_by().all()
     last = math.ceil(len(posts)/int(params['no_of_posts']))
@@ -79,7 +79,7 @@ def post_route(post_slug):
     post = Posts.query.filter_by(slug=post_slug).first()
     return render_template('post.html', params=params, post=post)
 
-@app.route("/about")
+@app.route("/about",methods=['GET', 'POST'])
 def about():
     return render_template('about.html', params=params)
 
@@ -143,7 +143,7 @@ def uploader():
 
 
 
-@app.route("/logout")
+@app.route("/logout",methods=['GET', 'POST'])
 def logout():
     session.pop('user')
     return redirect('/dashboard')
